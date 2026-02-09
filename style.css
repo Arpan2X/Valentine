@@ -1,0 +1,199 @@
+/* Existing styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#ffd1dc,#9fff9a);
+  text-align: center;
+  color: #333;
+  overflow: hidden; /* Prevent scrollbars for floating hearts */
+}
+
+h1 { 
+  color:#b30059; 
+  margin-top:30px; 
+}
+
+.menu a {
+  display:block;
+  margin:10px auto;
+  width:220px;
+  padding:10px;
+  background:white;
+  border-radius:20px;
+  text-decoration:none;
+  color:#e60073;
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.photo {
+  width:280px;
+  border-radius:20px;
+  margin:20px;
+}
+
+.gallery img {
+  width:180px;
+  margin:10px;
+  border-radius:15px;
+}
+
+.back {
+  display:inline-block;
+  margin:20px;
+  text-decoration:none;
+  color:#b30059;
+}
+
+footer {
+  margin:30px;
+}
+
+/* Floating hearts effect - straight up */
+.heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #e60073;
+  transform: rotate(45deg);
+  left: 50%;
+  bottom: -50px;
+  animation: float 6s linear infinite;
+  opacity: 0.8;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #e60073;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(310deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) rotate(310deg);
+    opacity: 0;
+  }
+}
+/* Box-style cards like 1st image */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+/* Keep existing style, just box behavior */
+.menu a {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Floating animation (same as 1st image vibe) */
+@keyframes cardFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.menu a {
+  animation: cardFloat 3.5s ease-in-out infinite;
+}
+
+/* Natural stagger */
+.menu a:nth-child(1) { animation-delay: 0s; }
+.menu a:nth-child(2) { animation-delay: .3s; }
+.menu a:nth-child(3) { animation-delay: .6s; }
+.menu a:nth-child(4) { animation-delay: .9s; }
+.menu a:nth-child(5) { animation-delay: 1.2s; }
+.menu a:nth-child(6) { animation-delay: 1.5s; }
+.menu a:nth-child(7) { animation-delay: 1.8s; }
+.menu a:nth-child(8) { animation-delay: 2.1s; }
+.menu a:nth-child(9) { animation-delay: 2.4s; }
+
+/* Base background setup (keeps existing styles safe) */
+.menu a {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Individual background images per box */
+.menu a:nth-child(1) { background-image: url("https://www.oyegifts.com/blog/wp-content/uploads/2026/01/ChatGPT-Image-Jan-28-2026-12_26_10-PM.png"); }
+.menu a:nth-child(2) { background-image: url("https://navakaravali.com/wp-content/uploads/2026/01/Propose-Day-2026.webp"); }
+.menu a:nth-child(3) { background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfyF2dK64aZC-aVfzJJVPq1U6n8_wHxF0LLQ&s"); }
+.menu a:nth-child(4) { background-image: url("https://assets.thehansindia.com/h-upload/2020/02/10/261654-happy-teddy-day.webp"); }
+.menu a:nth-child(5) { background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS19pNyJ0v4xfwsZwsKi9OVxgbbY0e5rh5XFQ&s"); }
+.menu a:nth-child(6) { background-image: url("https://images.indianexpress.com/2019/02/hug-day-feature.jpg"); }
+.menu a:nth-child(7) { background-image: url("https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/01/Kiss-Day.jpg?resize=1024%2C566&ssl=1"); }
+.menu a:nth-child(8) { background-image: url("https://gifdb.com/images/high/happy-valentines-498-x-498-gif-jyxaxx8apoggccqv.gif"); }
+.menu a:nth-child(9) { background-image: url("https://img.freepik.com/premium-photo/photo-hands-forming-heart-shape-sunset_763111-337633.jpg?semt=ais_hybrid&w=740&q=80"); }
+
+}
+
+/* Box for top message */
+h1 {
+  display: inline-block;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  position: relative;
+  animation: moveBanner 10s linear infinite;
+}
+
+/* Smooth moving like top video */
+@keyframes moveBanner {
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* ONLY top title floating (left ↔ right) */
+h1 {
+  white-space: nowrap;
+  color: black;
+  font-family: "Mozilla Headline", sans-serif;
+  animation: floatSide 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatSide {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+
+
+
