@@ -193,6 +193,72 @@ h1 {
     transform: translateX(20px);
   }
 }
+/* Opening screen overlay */
+#openingScreen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg,#ffd1dc,#9fff9a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Opening box */
+.opening-box {
+  background: rgba(255,255,255,0.9);
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  text-align: center;
+  animation: popIn 0.6s ease;
+}
+
+.opening-box h2 {
+  font-family: "Mozilla Headline", sans-serif;
+  margin-bottom: 25px;
+  color: #b30059;
+}
+
+/* Buttons */
+.opening-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.open-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.yes-btn {
+  background: #ff4d88;
+  color: white;
+}
+
+.no-btn {
+  background: #ddd;
+  color: #333;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
 
 
 
